@@ -1,0 +1,82 @@
+{% include "header.html.twig" %}
+{% block body %}
+	<main>
+		<h3>{{ 'moi'|trans|capitalize }}
+			{{ prenom|capitalize }}
+			{{ nom|capitalize }},
+			{{ 'certif'|trans }}</h3>
+		<div id='souffre'>
+			<span class='vert'>{{ 'souffrePas'|trans }}</span>
+			<span class='rouge'>{{ 'souffre'|trans }}</span>
+		</div>
+		<div class='cause'>
+			<div>
+				<img src="{{ asset('/images/GreenUnchecked.png') }}" class="greenCheck" alt="">
+				<img src="{{ asset('/images/GreenChecked.png') }}" class='active undisplayed' alt="">
+				<span>{{ 'os'|trans }}</span>
+				<img src="{{ asset('/images/RedUnchecked.png') }}" class="unChecked undisplayed" alt="">
+				<img src="{{ asset('/images/RedChecked.png') }}" class='redCheck' alt="">
+			</div>
+			<div>
+				<img src="{{ asset('/images/GreenUnchecked.png') }}" class="greenCheck" alt="">
+				<img src="{{ asset('/images/GreenChecked.png') }}" class='active undisplayed' alt="">
+				<span>{{ 'coeur'|trans }}</span>
+				<img src="{{ asset('/images/RedUnchecked.png') }}" class="unChecked undisplayed" alt="">
+				<img src="{{ asset('/images/RedChecked.png') }}" class='redCheck' alt="">
+			</div>
+			<div>
+				<img src="{{ asset('/images/GreenUnchecked.png') }}" class="greenCheck" alt="">
+				<img src="{{ asset('/images/GreenChecked.png') }}" class='active undisplayed' alt="">
+				<span>{{ 'probleme'|trans }}</span>
+				<img src="{{ asset('/images/RedUnchecked.png') }}" class="unChecked undisplayed" alt="">
+				<img src="{{ asset('/images/RedChecked.png') }}" class='redCheck' alt="">
+			</div>
+			<div>
+				<img src="{{ asset('/images/GreenUnchecked.png') }}" class="greenCheck" alt="">
+				<img src="{{ asset('/images/GreenChecked.png') }}" class='active undisplayed' alt="">
+				<span>{{ 'espace'|trans }}</span>
+				<img src="{{ asset('/images/RedUnchecked.png') }}" class="unChecked undisplayed" alt="">
+				<img src="{{ asset('/images/RedChecked.png') }}" class='redCheck' alt="">
+			</div>
+			<div>
+				<img src="{{ asset('/images/GreenUnchecked.png') }}" class="greenCheck" alt="">
+				<img src="{{ asset('/images/GreenChecked.png') }}" class='active undisplayed' alt="">
+				<span>{{ 'equilibre'|trans }}</span>
+				<img src="{{ asset('/images/RedUnchecked.png') }}" class="unChecked undisplayed" alt="">
+				<img src="{{ asset('/images/RedChecked.png') }}" class='redCheck' alt="">
+			</div>
+			<div>
+				<img src="{{ asset('/images/GreenUnchecked.png') }}" class="greenCheck" alt="">
+				<img src="{{ asset('/images/GreenChecked.png') }}" class='active undisplayed' alt="">
+				<span>{{ 'vu'|trans }}</span>
+				<img src="{{ asset('/images/RedUnchecked.png') }}" class="unChecked undisplayed" alt="">
+				<img src="{{ asset('/images/RedChecked.png') }}" class='redCheck' alt="">
+			</div>
+		</div>
+		<div id='capacite'>
+			<span class='vert'>{{ 'capaOk'|trans }}</span>
+			<span class='rouge'>{{ 'capaNok'|trans }}</span>
+		</div>
+		<div class='cause'>
+			<div>
+				<img src="{{ asset('/images/GreenUnchecked.png') }}" class="greenCheck" alt="">
+				<img src="{{ asset('/images/GreenChecked.png') }}" class='active undisplayed' alt="">
+				<span>{{ 'nager'|trans }}</span>
+				<img src="{{ asset('/images/RedUnchecked.png') }}" class="unChecked undisplayed" alt="">
+				<img src="{{ asset('/images/RedChecked.png') }}" class='redCheck' alt="">
+			</div>
+			<div>
+				<img src="{{ asset('/images/GreenUnchecked.png') }}" class="greenCheck" alt="">
+				<img src="{{ asset('/images/GreenChecked.png') }}" class='active undisplayed' alt="">
+				<span>{{ 'plonger'|trans }}</span>
+				<img src="{{ asset('/images/RedUnchecked.png') }}" class="unChecked undisplayed" alt="">
+				<img src="{{ asset('/images/RedChecked.png') }}" class='redCheck' alt="">
+			</div>
+		</div>
+		<section id="fleche">
+			<a href="{{ path("utilisateur", app.request.get('_route_params')) }}"><img src="{{ asset('/images/arrowL.png') }}" alt=""></a>
+			<img id="versDeclare" src="{{ asset('/images/arrowR.png') }}" alt="">
+		</section>
+	</main>
+{% endblock %}
+{% include "footer.html.twig" %}

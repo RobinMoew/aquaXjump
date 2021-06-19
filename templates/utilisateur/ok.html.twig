@@ -1,0 +1,16 @@
+{% include "header.html.twig" %}
+{% block body %}
+	<main>
+		<div id="ok">{{ 'felicitation'|trans|upper }}</div>
+		<section id="pOk">
+			<span>{{ 'pOk1'|trans|upper }}</span>
+			<span>{{ 'pOk2'|trans }}</span>
+			<span>{{ 'pOk3'|trans }}</span>
+		</section>
+		<section id="pOk2">
+			<span>{{ 'pOk4'|trans|upper }}</span>
+			<span>{{ 'pOk5'|trans|upper }}</span>
+		</section>
+	</main>
+{% endblock %}
+{% include "footer.html.twig" %}

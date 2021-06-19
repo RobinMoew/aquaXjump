@@ -1,0 +1,39 @@
+{% include "header.html.twig" %}
+{% block body %}
+	<main>
+		<h3>{{ 'moi'|trans|capitalize }}
+			{{ prenom|capitalize }}
+			{{ nom|capitalize }},
+			{{ 'declare'|trans }}</h3>
+
+		<section id="regle">
+			<p>{{ 'regle'|trans }}</p>
+			<p>{{ 'regle2'|trans }}</p>
+			<p>{{ 'regle3'|trans }}</p>
+			<p>{{ 'regle4'|trans }}</p>
+		</section>
+
+		<section id="phrase">
+			<span class="spanhrase">{{ 'p1'|trans }}</span>
+			<span class="spanhrase">{{ 'p2'|trans }}</span>
+			<span class="spanhrase">{{ 'p3'|trans }}</span>
+		</section>
+
+		<div id="accepte">
+			<p>{{ 'accepte'|trans }}</p>
+			<img src="{{ asset('/images/GreenUnchecked.png') }}" class="declarationCheck" alt="">
+			<img src="{{ asset('/images/GreenChecked.png') }}" class='active declarationCheck undisplayed' alt="">
+		</div>
+
+		<div id="condition">
+			<a href="{# {{ asset() }} #}" target="_blank" rel="noopener noreferrer">{{ 'securite'|trans }}</a>
+			<a href="{# {{ asset() }} #}" target="_blank" rel="noopener noreferrer">{{ 'donnee'|trans }}</a>
+		</div>
+
+		<section id="fleche">
+			<a href="{{ path("certif", app.request.get('_route_params')) }}"><img src="{{ asset('/images/arrowL.png') }}" alt=""></a>
+			<img id="versOk" src="{{ asset('/images/arrowR.png') }}" alt="">
+		</section>
+	</main>
+{% endblock %}
+{% include "footer.html.twig" %}

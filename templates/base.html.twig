@@ -1,0 +1,24 @@
+{% include "header.html.twig" %}
+{% block body %}
+	<main>
+		<div class="bienvenue">
+			<span class='ca'>{{ 'bienvenueCa'|trans|upper }}</span>
+			<span class='es'>{{ 'bienvenueEs'|trans|upper }}</span>
+			<span class='fr'>{{ 'bienvenueFr'|trans|upper }}</span>
+			<span class='en'>{{ 'bienvenueEn'|trans|upper }}</span>
+		</div>
+		<div class="message">
+			<div class='ca'>{{ 'messageCa'|trans|upper }}</div>
+			<div class='es'>{{ 'messageEs'|trans|upper }}</div>
+			<div class='fr'>{{ 'messageFr'|trans|upper }}</div>
+			<div class='en'>{{ 'messageEn'|trans|upper }}</div>
+		</div>
+		<div class="langues">
+			<a href="{{ path("utilisateur", app.request.get('_route_params')|merge({'_locale':'ca'})) }}" id='ca' class='drapeau'><img src="{{ asset('/images/Cat.png') }}" alt=""></a>
+			<a href="{{ path("utilisateur", app.request.get('_route_params')|merge({'_locale':'es'})) }}" id='es' class='drapeau'><img src="{{ asset('/images/Esp.png') }}" alt=""></a>
+			<a href="{{ path("utilisateur", app.request.get('_route_params')|merge({'_locale':'fr'})) }}" id='fr' class='drapeau'><img src="{{ asset('/images/Fr.png') }}" alt=""></a>
+			<a href="{{ path("utilisateur", app.request.get('_route_params')|merge({'_locale':'en'})) }}" id='en' class='drapeau'><img src="{{ asset('/images/UK.png') }}" alt=""></a>
+		</div>
+	</main>
+{% endblock %}
+{% include "footer.html.twig" %}

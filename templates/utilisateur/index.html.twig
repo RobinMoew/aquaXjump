@@ -1,0 +1,46 @@
+{% include "header.html.twig" %}
+{% block body %}
+	<main>
+		<h2>{{ 'donneesUser'|trans|upper }}</h2>
+		<section id="inputs">
+			<p>{{ 'nom'|trans|upper }}</p>
+			<input type="text">
+			<p>{{ 'prenom'|trans|upper }}</p>
+			<input type="text">
+		</section>
+		<section id="sexeAge">
+			<div>
+				<div id="genreSelect">
+					<div id='maleSelect'>
+						<img id="male_Unchecked" src="/images/BluUnchecked.png" alt="">
+						<img id="male_Checked" class='active undisplayed' src="{{ asset('/images/BluChecked.png') }}" alt="">
+						<img src="/images/Male.png" alt="">
+					</div>
+					<div id='femaleSelect'>
+						<img id="female_Unchecked" src="/images/PinkUnchecked.png" alt="">
+						<img id="female_Checked" class='active undisplayed' src="{{ asset('/images/PinkChecked.png') }}" alt="">
+						<img src="/images/Female.png" alt="">
+					</div>
+				</div>
+				<div>
+					<div id="ageSelect">
+						<span>
+							<span id="age">16</span>
+							<span>{{ 'age'|trans|upper }}</span>
+						</span>
+						<span id="upDowmArrows">
+							<img id="up" src="{{ asset('/images/UpBlu.png') }}" alt="">
+							<img id="down" src="{{ asset('/images/DownBlu.png') }}" alt="">
+						</span>
+					</div>
+					<p class="ageMini">{{ 'miniAge'|trans|upper }}</p>
+				</div>
+			</div>
+		</section>
+		<section id="fleche">
+			<a href="{{ path("index", app.request.get('_route_params')) }}"><img src="{{ asset('/images/arrowL.png') }}" alt=""></a>
+			<img id="versCertif" src="{{ asset('/images/arrowR.png') }}" alt="">
+		</section>
+	</main>
+{% endblock %}
+{% include "footer.html.twig" %}

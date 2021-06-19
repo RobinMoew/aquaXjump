@@ -1,0 +1,340 @@
+* {
+    font-family: 'Monserat', sans-serif;
+    font-weight: bold;
+}
+
+.undisplayed {
+    display: none;
+}
+
+.vert {
+    color: #37c724;
+}
+
+.rouge {
+    color: red;
+}
+
+header {
+    padding: 1em;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 4vw;
+    color: blue;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80vh;
+}
+
+main>h2,
+main>h3 {
+    text-align: center;
+    color: blue;
+}
+
+main .bienvenue {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+main .bienvenue span {
+    font-size: 1.8vw;
+}
+
+input[type='text'] {
+    width: 50%;
+    height: 2.5em;
+    background-color: lightgray;
+    border: none;
+}
+
+.ca {
+    color: blue;
+}
+
+.es {
+    color: orange;
+}
+
+.fr {
+    color: black;
+}
+
+.en {
+    color: green;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.message>div {
+    font-size: 1.6vw;
+    margin-bottom: 1em;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.langues {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.langues>a:hover {
+    cursor: pointer;
+}
+
+.drapeau {
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    padding: 1em;
+}
+
+.drapeau>img {
+    height: auto;
+    width: 100%;
+}
+
+main>#inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main>#sexeAge {
+    display: flex;
+    justify-content: center;
+}
+
+#sexeAge>div:first-child {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ageMini {
+    font-size: 0.7em;
+    color: red;
+}
+
+#maleSelect img,
+#femaleSelect img,
+#ageSelect img {
+    width: 50px;
+    height: auto;
+}
+
+#male_Unchecked,
+#male_Checked,
+#female_Unchecked,
+#female_Checked {
+    cursor: pointer;
+}
+
+#ageSelect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ageSelect>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ageSelect>span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+#ageSelect>span>span {
+    color: blue;
+    font-size: 1.3em;
+}
+
+#ageSelect #age {
+    font-size: 2em;
+}
+
+#upDowmArrows {
+    display: flex;
+    flex-direction: column;
+}
+
+#upDowmArrows>img {
+    margin: 10px;
+    cursor: pointer;
+}
+
+#souffre,
+#capacite {
+    margin: 0 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#souffre>span,
+#capacite>span {
+    width: 25%;
+    text-align: center;
+}
+
+.cause {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cause>div {
+    display: flex;
+    justify-content: space-between;
+    color: blue;
+    margin: 0 10em;
+}
+
+.cause img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+#regle,
+#phrase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#regle>p {
+    color: #37c724;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+#accepte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+}
+
+#accepte>img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#condition {
+    display: flex;
+    justify-content: center;
+}
+
+#condition>a {
+    text-decoration: none;
+    width: 20%;
+    height: 40px;
+    background-color: #f1f1f1;
+    margin: 0 5px;
+    text-align: center;
+    line-height: 2.5;
+}
+
+#condition>a:visited {
+    color: black;
+}
+
+#nOk,
+#ok {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    margin: 0 20%;
+    color: white;
+}
+
+#nOk {
+    background-color: red;
+}
+
+#ok {
+    background-color: #37c724;
+}
+
+#pNOk,
+#pOk,
+#pOk2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+#pNOk>span,
+#pOk>span,
+#pOk2>span {
+    margin: 5px 0;
+}
+
+#fleche {
+    display: flex;
+    justify-content: center;
+}
+
+#fleche>a>img {
+    width: 100px;
+    height: auto;
+    margin: 0 200px;
+}
+
+#fleche>img {
+    cursor: pointer;
+    width: 100px;
+    height: auto;
+    margin: 0 200px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em;
+}
+
+footer.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container span {
+    color: blue;
+    font-size: 1.2em;
+}
