@@ -6,18 +6,14 @@ $( function () {
     startTime();
 } );
 
-$( 'input' ).accentKeyboard();
 $( '.ak-input' ).accentKeyboard( {
     // 'en_US', 'ru_RU', 'es_ES'
     // 'pt_PT', 'it_IT', 'fr_FR'
     layout: 'accent',
     active_shift: true,
     is_hidden: true,
-    open_speed: 100,
-    close_speed: 100,
     show_on_focus: true,
     hide_on_blur: true,
-    enabled: true
 } );
 
 function startTime() {
@@ -159,7 +155,7 @@ $( '.unChecked' ).click( function () {
 } )
 
 $( '#versDeclare' ).click( function () {
-    if ( $( '.active' ).not( '.undisplayed' ).length == 12 ) {
+    if ( $( '.active' ).not( '.undisplayed' ).length == 10 ) {
         $.ajax( {
             url: `/${ locale }/declaration`,
             success: () => {
@@ -177,7 +173,7 @@ $( '.declarationCheck' ).click( function () {
 } )
 
 $( '#versOk' ).click( function () {
-    if ( $( '.active' ).not( '.undisplayed' ).length == 5 ) {
+    if ( $( '.active' ).not( '.undisplayed' ).length == 3 ) {
         window.location.href = `/${ locale }/ok`;
     } else {
         window.location.href = `/${ locale }/nOk`;

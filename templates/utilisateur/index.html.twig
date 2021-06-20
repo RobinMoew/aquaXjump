@@ -3,11 +3,12 @@
 	<main>
 		<h2>{{ 'donneesUser'|trans|upper }}</h2>
 		<section id="inputs">
+			{# <button id="keyboard">afficher clavier</button> #}
 			<p id="error" class='rouge'>{{ 'error'|trans }}</p>
 			<p>{{ 'nom'|trans|upper }}</p>
-			<input type="text">
+			<input type="text" class="ak-input">
 			<p>{{ 'prenom'|trans|upper }}</p>
-			<input type="text">
+			<input type="text" class="ak-input">
 		</section>
 		<section id="sexeAge">
 			<div>

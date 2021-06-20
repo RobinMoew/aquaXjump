@@ -92,22 +92,34 @@ class UtilisateurController extends AbstractController
      */
     public function upload(Request $request): Response
     {
-        // new filename
-        $filename = $this->getParameter('images_directory') . 'pic_' . date('YmdHis') . '.jpeg';
-        
-        // open the output file for writing
-        $ifp = fopen($filename, 'wb');
+        $entityManager = $this->getDoctrine()->getManager();
+        $personne = $entityManager->getRepository(Personne::class)->findBy(array(), array('id' => 'DESC'), 1, 0);
+        $id = $personne[0]->getId();
+        $dir = $this->getParameter('images_directory') . $id;
+        if (!is_dir($dir)) mkdir($dir);
+        foreach ($request->get('imgs') as $key => $b64img) {
+            // new filename
+            $filename = $dir . '/' . 'pic_' . $key . '.jpeg';
 
-        // split the string on commas
-        // $data[ 0 ] == "data:image/png;base64"
-        // $data[ 1 ] == <actual base64 string>
-        $data = explode(',', $request->get('img'));
+            // open the output file for writing
+            $ifp = fopen($filename, 'wb');
 
-        // we could add validation here with ensuring count( $data ) > 1
-        fwrite($ifp, base64_decode($data[1]));
+            // split the string on commas
+            // $data[ 0 ] == "data:image/png;base64"
+            // $data[ 1 ] == <actual base64 string>
+            $data = explode(',', $b64img);
 
-        // clean up the file resource
-        fclose($ifp);
+            // we could add validation here with ensuring count( $data ) > 1
+            fwrite($ifp, base64_decode($data[1]));
+
+            // clean up the file resource
+            fclose($ifp);
+        }
+        $project = $this->getParameter('kernel.project_dir');
+        $command = 'python ' . $project . '\public\py\train_model.py ' . $id;
+        dump($command);
+        exec($command, $output, $code);
+        dump($output, $code);
 
         return new Response(0);
     }

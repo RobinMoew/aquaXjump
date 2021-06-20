@@ -3,15 +3,16 @@ $( function () {
     var shot = setInterval( function () {
         count++;
         $( '#textePhoto' ).html( count + '/5' );
+        takeSnapshot();
+        saveSnap();
         if ( count == 5 ) {
+            upload();
             clearInterval( shot );
             setTimeout( function () {
                 window.location.href = `/`
             }, 5000 );
         }
-        takeSnapshot();
-        saveSnap();
-    }, 3000 )
+    }, 1000 )
 
     Webcam.set( {
         width: 320,
@@ -28,14 +29,19 @@ function takeSnapshot() {
     } );
 }
 
+var imgs = [];
+
 function saveSnap() {
     var base64image = $( "#imageprev" ).attr( 'src' );
+    imgs.push( base64image );
+}
 
+function upload() {
     $.ajax( {
         url: '/upload',
         method: 'POST',
         data: {
-            img: base64image
+            imgs: imgs
         },
     } );
 }
