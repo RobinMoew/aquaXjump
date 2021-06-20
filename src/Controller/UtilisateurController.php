@@ -27,7 +27,6 @@ class UtilisateurController extends AbstractController
         if (count($input) < 4) {
             return new Response(1);
         } else {
-
             $this->get('session')->set('nom', $input[0]);
             $this->get('session')->set('prenom', $input[1]);
             $this->get('session')->set('sexe', $input[2]);
@@ -38,6 +37,8 @@ class UtilisateurController extends AbstractController
             $personne->setPrenom($input[1]);
             $input[2] == 'male' ? $personne->setSexe(1) : $personne->setSexe(2);
             $personne->setAge($input[3]);
+            date_default_timezone_set('Europe/Paris');
+            $personne->setEnregistrement(new \DateTime('NOW'));
             $entityManager->persist($personne);
             $entityManager->flush();
         }
@@ -84,5 +85,30 @@ class UtilisateurController extends AbstractController
     public function ok(): Response
     {
         return $this->render('utilisateur/ok.html.twig', []);
+    }
+
+    /**
+     * @Route("/upload", name="upload")
+     */
+    public function upload(Request $request): Response
+    {
+        // new filename
+        $filename = $this->getParameter('images_directory') . 'pic_' . date('YmdHis') . '.jpeg';
+        
+        // open the output file for writing
+        $ifp = fopen($filename, 'wb');
+
+        // split the string on commas
+        // $data[ 0 ] == "data:image/png;base64"
+        // $data[ 1 ] == <actual base64 string>
+        $data = explode(',', $request->get('img'));
+
+        // we could add validation here with ensuring count( $data ) > 1
+        fwrite($ifp, base64_decode($data[1]));
+
+        // clean up the file resource
+        fclose($ifp);
+
+        return new Response(0);
     }
 }

@@ -35,6 +35,7 @@ main {
     flex-direction: column;
     justify-content: space-evenly;
     height: 80vh;
+    position: relative;
 }
 
 main>h2,
@@ -254,18 +255,15 @@ main>#sexeAge {
     justify-content: center;
 }
 
-#condition>a {
-    text-decoration: none;
+#condition>button {
+    border: none;
     width: 20%;
     height: 40px;
     background-color: #f1f1f1;
     margin: 0 5px;
     text-align: center;
     line-height: 2.5;
-}
-
-#condition>a:visited {
-    color: black;
+    cursor: pointer;
 }
 
 #nOk,
@@ -337,4 +335,43 @@ footer.container {
 .container span {
     color: blue;
     font-size: 1.2em;
+}
+
+#error {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+#securitePDF,
+#donneePDF {
+    position: absolute;
+    margin: auto;
+    width: 1265px;
+    height: 700px;
+}
+
+#fermer {
+    position: absolute;
+    margin: 0 auto;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 1em;
+}
+
+#photo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#cam {
+    width: 320px;
+    height: 240px;
+}
+
+#pPhoto {
+    text-align: center;
 }

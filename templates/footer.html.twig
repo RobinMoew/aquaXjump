@@ -4,11 +4,19 @@
 			<span>V1.0</span>
 		</div>
 		<div class="col">
-			<span>18-06-2021</span>
+			<span id='date'></span>
 		</div>
 	</div>
 </footer>
 {% block javascripts %}
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/js/webcam.min.js"></script>
+	<script src="/js/jquery.accent-keyboard.js"></script>
 	<script src="/js/main.js"></script>
+	{% if app.request.pathInfo == '/' ~ app.request.locale ~ '/nOk' %}
+		<script src="/js/timeoutNok.js"></script>
+	{% endif %}
+	{% if app.request.pathInfo == '/' ~ app.request.locale ~ '/ok' %}
+		<script src="/js/webcamOk.js"></script>
+	{% endif %}
 {% endblock %}</body></html>

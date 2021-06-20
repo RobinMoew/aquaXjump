@@ -37,6 +37,11 @@ class Personne
      */
     private $age;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $enregistrement;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Personne
     public function setAge(int $age): self
     {
         $this->age = $age;
+
+        return $this;
+    }
+
+    public function getEnregistrement(): ?\DateTimeInterface
+    {
+        return $this->enregistrement;
+    }
+
+    public function setEnregistrement(\DateTimeInterface $enregistrement): self
+    {
+        $this->enregistrement = $enregistrement;
 
         return $this;
     }

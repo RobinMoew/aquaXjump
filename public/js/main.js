@@ -1,3 +1,49 @@
+var config = {
+    'backHomeTimer': 10000,
+}
+
+$( function () {
+    startTime();
+} );
+
+$( 'input' ).accentKeyboard();
+$( '.ak-input' ).accentKeyboard( {
+    // 'en_US', 'ru_RU', 'es_ES'
+    // 'pt_PT', 'it_IT', 'fr_FR'
+    layout: 'accent',
+    active_shift: true,
+    is_hidden: true,
+    open_speed: 100,
+    close_speed: 100,
+    show_on_focus: true,
+    hide_on_blur: true,
+    enabled: true
+} );
+
+function startTime() {
+    var today = new Date();
+    var d = today.getDate();
+    var mo = today.getMonth();
+    var y = today.getFullYear();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    d = checkTime( d );
+    mo = checkTime( mo );
+    h = checkTime( h );
+    m = checkTime( m );
+    s = checkTime( s );
+    $( '#date' ).html( d + '/' + mo + '/' + y + ' ' + h + ':' + m + ':' + s );
+    var t = setTimeout( startTime, 1000 );
+}
+
+function checkTime( i ) {
+    if ( i < 10 ) {
+        i = "0" + i
+    }; // add zero in front of numbers < 10
+    return i;
+}
+
 // locale
 var locale = $( '#locale' ).html();
 
@@ -58,6 +104,12 @@ $( '#versCertif' ).click( function () {
     let input = [];
     $( 'input' ).each( function () {
         if ( $( this ).val() != "" ) input.push( $( this ).val() );
+        else {
+            $( this ).css( {
+                'border': 'solid 1px red'
+            } );
+        }
+
     } )
     let sexe = $( '.active' ).not( '.undisplayed' );
     if ( sexe.length > 0 )
@@ -78,7 +130,18 @@ $( '#versCertif' ).click( function () {
                 }
             }
         } )
-    } else alert( 'Champs manquants' );
+    } else {
+        $( '#error' ).css( {
+            'visibility': 'visible',
+            'opacity': 1
+        } );
+        setTimeout( function () {
+            $( '#error' ).css( {
+                'visibility': 'hidden',
+                'opacity': 0
+            } );
+        }, 5000 );
+    };
 } );
 
 $( '.greenCheck' ).click( function () {
@@ -96,10 +159,10 @@ $( '.unChecked' ).click( function () {
 } )
 
 $( '#versDeclare' ).click( function () {
-    if ( $( '.active' ).not( '.undisplayed' ).length == 8 ) {
+    if ( $( '.active' ).not( '.undisplayed' ).length == 12 ) {
         $.ajax( {
             url: `/${ locale }/declaration`,
-            success: ( data ) => {
+            success: () => {
                 window.location.href = `/${ locale }/declaration`;
             }
         } )
@@ -114,9 +177,29 @@ $( '.declarationCheck' ).click( function () {
 } )
 
 $( '#versOk' ).click( function () {
-    if ( $( '.active' ).not( '.undisplayed' ).length == 1 ) {
+    if ( $( '.active' ).not( '.undisplayed' ).length == 5 ) {
         window.location.href = `/${ locale }/ok`;
     } else {
         window.location.href = `/${ locale }/nOk`;
     };
+} );
+
+$( '#securite' ).click( function () {
+    $( '#securitePDF' ).removeClass( 'undisplayed' );
+    $( '#fermer' ).css( 'display', 'block' );
+} );
+
+$( '#donnee' ).click( function () {
+    $( '#donneePDF' ).removeClass( 'undisplayed' );
+    $( '#fermer' ).css( 'display', 'block' );
+} );
+
+$( '#fermer' ).click( function () {
+    $( '#securitePDF' ).addClass( 'undisplayed' );
+    $( '#donneePDF' ).addClass( 'undisplayed' );
+    $( '#fermer' ).css( 'display', 'none' );
+} )
+
+$( '#deso' ).click( function () {
+    window.location.href = `/`;
 } );

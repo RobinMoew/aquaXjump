@@ -1,6 +1,9 @@
 {% include "header.html.twig" %}
 {% block body %}
 	<main>
+		<button id='fermer'>{{ 'fermer'|trans }}</button>
+		<embed id="securitePDF" class='undisplayed' src="/rules1.pdf" type="application/pdf"/>
+		<embed id="donneePDF" class='undisplayed' src="/rules2.pdf" type="application/pdf"/>
 		<h3>{{ 'moi'|trans|capitalize }}
 			{{ prenom|capitalize }}
 			{{ nom|capitalize }},
@@ -26,8 +29,8 @@
 		</div>
 
 		<div id="condition">
-			<a href="{# {{ asset() }} #}" target="_blank" rel="noopener noreferrer">{{ 'securite'|trans }}</a>
-			<a href="{# {{ asset() }} #}" target="_blank" rel="noopener noreferrer">{{ 'donnee'|trans }}</a>
+			<button id="securite">{{ 'securite'|trans }}</button>
+			<button id="donnee">{{ 'donnee'|trans }}</button>
 		</div>
 
 		<section id="fleche">
