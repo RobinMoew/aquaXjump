@@ -108,7 +108,7 @@ $( '#versCertif' ).click( function () {
 
     } )
     let sexe = $( '.active' ).not( '.undisplayed' );
-    if ( sexe.length > 0 )
+    if ( sexe.length == 3 )
         input.push( sexe.attr( 'id' ).split( '_' )[ 0 ] );
     let age = $( '#age' ).text();
     input.push( age );
