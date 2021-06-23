@@ -1,19 +1,4 @@
 $( function () {
-    var count = 0;
-    var shot = setInterval( function () {
-        count++;
-        $( '#textePhoto' ).html( count + '/5' );
-        takeSnapshot();
-        saveSnap();
-        if ( count == 5 ) {
-            upload();
-            clearInterval( shot );
-            setTimeout( function () {
-                window.location.href = `/`
-            }, 5000 );
-        }
-    }, 1000 )
-
     Webcam.set( {
         width: 320,
         height: 240,
@@ -21,6 +6,22 @@ $( function () {
         jpeg_quality: 90
     } );
     Webcam.attach( '#cam' );
+    setTimeout( function () {
+        var count = 0;
+        var shot = setInterval( function () {
+            count++;
+            $( '#textePhoto' ).html( count + '/5' );
+            takeSnapshot();
+            saveSnap();
+            if ( count == 5 ) {
+                upload();
+                clearInterval( shot );
+                setTimeout( function () {
+                    window.location.href = `/`
+                }, 5000 );
+            }
+        }, 1000 )
+    }, 5000 )
 } );
 
 function takeSnapshot() {
