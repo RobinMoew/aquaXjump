@@ -35,11 +35,11 @@ os: "de problèmes de dos, cou, épaules, genoux, articulations, prothèse..."
 p1: "Aussi, Je certifie les informations et"
 p2: "déclare pouvoir utiliser l'attraction AQUA X JUMP,"
 p3: étant responsable de mes actions en cas d'accident.
-pOk1: Vous êtes autorisé à acceder à l'attraction
-pOk2: Vos données sont enregistrées
-pOk3: Enfin de pouvoir être reconnu par le contrôle d'accès
-pOk4: Nos devons prendre 5 photos
-pOk5: Patientez en fixant l'écran
+pOk1: Afin d'être autorisé à accéder à l'attraction,
+pOk2: et être reconnu par le contrôle d'accès,
+pOk3: nous devons prendre 5 photos.
+pOk4: Ne bougez pas et fixez l'écran
+pFelicitation: Vous êtes autorisé à accéder à l'attraction.
 pSecure1: "Pour votre sécurité, l'accès à cette attraction vous est interdit"
 pSecure2: >-
   Vous pouvez profiter de toutes les autres attractions que vous propose

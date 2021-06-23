@@ -17,7 +17,7 @@ $( function () {
                 upload();
                 clearInterval( shot );
                 setTimeout( function () {
-                    window.location.href = `/`
+                    window.location.href = `/${ locale }/bravo`;
                 }, 5000 );
             }
         }, 1000 )

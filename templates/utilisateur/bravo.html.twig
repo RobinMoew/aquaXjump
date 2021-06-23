@@ -1,0 +1,13 @@
+{% include "header.html.twig" %}
+{% block body %}
+	<main>
+		<div id="ok">{{ 'felicitation'|trans|upper }}</div>
+		<section id="pOk">
+			<span>{{ 'pFelicitation'|trans }}</span>
+		</section>
+		<section id="pOk2">
+			<img src="{{ asset('/images/logo-small.png') }}" alt="Aqua Brava">
+		</section>
+	</main>
+{% endblock %}
+{% include "footer.html.twig" %}

@@ -213,6 +213,7 @@ main>#sexeAge {
 .cause>div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: blue;
     margin: 0 10em;
 }
@@ -221,6 +222,10 @@ main>#sexeAge {
     width: 50px;
     height: auto;
     cursor: pointer;
+}
+
+.cause span {
+    font-size: 1.3em;
 }
 
 #regle,

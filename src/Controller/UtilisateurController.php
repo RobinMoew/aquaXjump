@@ -117,9 +117,17 @@ class UtilisateurController extends AbstractController
         }
         $project = $this->getParameter('kernel.project_dir');
         $command = 'python ' . $project . '\public\uploads\train_model.py ' . $id;
-        
+
         exec($command, $output, $code);
 
         return new Response(0);
+    }
+
+    /**
+     * @Route("/{_locale}/bravo", name="bravo")
+     */
+    public function bravo(): Response
+    {
+        return $this->render('utilisateur/bravo.html.twig', []);
     }
 }
