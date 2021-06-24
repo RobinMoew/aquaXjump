@@ -36,7 +36,7 @@ class UtilisateurController extends AbstractController
             $personne->setNom($input[0]);
             $personne->setPrenom($input[1]);
             $input[2] == 'male' ? $personne->setSexe(1) : $personne->setSexe(2);
-            $personne->setAge($input[3]);
+            $personne->setAge((int) $input[3]);
             date_default_timezone_set('Europe/Paris');
             $personne->setEnregistrement(new \DateTime('NOW'));
             $entityManager->persist($personne);

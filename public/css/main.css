@@ -179,6 +179,10 @@ main>#sexeAge {
 
 #ageSelect #age {
     font-size: 2em;
+    text-align: center;
+    width: 75px;
+    height: 70px;
+    margin-bottom: 10px;
 }
 
 #upDowmArrows {

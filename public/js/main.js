@@ -6,15 +6,15 @@ $( function () {
     startTime();
 } );
 
-$( '.ak-input' ).accentKeyboard( {
-    // 'en_US', 'ru_RU', 'es_ES'
-    // 'pt_PT', 'it_IT', 'fr_FR'
-    layout: 'accent',
-    active_shift: true,
-    is_hidden: true,
-    show_on_focus: true,
-    hide_on_blur: true,
-} );
+// $( '.ak-input' ).accentKeyboard( {
+//     // 'en_US', 'ru_RU', 'es_ES'
+//     // 'pt_PT', 'it_IT', 'fr_FR'
+//     layout: 'accent',
+//     active_shift: true,
+//     is_hidden: true,
+//     show_on_focus: true,
+//     hide_on_blur: true,
+// } );
 
 function startTime() {
     var today = new Date();
@@ -70,31 +70,31 @@ var upTimeout, up = $( '#up' );
 var downTimeout, down = $( '#down' );
 var age = $( '#age' ).html();
 
-up.click( function () {
-    age++;
-    $( '#age' ).html( age );
-} );
-down.click( function () {
-    if ( age > 16 ) age--;
-    $( '#age' ).html( age );
-} );
+// up.click( function () {
+//     age++;
+//     $( '#age' ).html( age );
+// } );
+// down.click( function () {
+//     if ( age > 16 ) age--;
+//     $( '#age' ).html( age );
+// } );
 
-up.mousedown( function () {
-    upTimeout = setInterval( function () {
-        age++;
-        $( '#age' ).html( age );
-    }, 100 );
-} );
-down.mousedown( function () {
-    downTimeout = setInterval( function () {
-        if ( age > 16 ) $( '#age' ).html( age-- );
-    }, 100 );
-} );
+// up.mousedown( function () {
+//     upTimeout = setInterval( function () {
+//         age++;
+//         $( '#age' ).html( age );
+//     }, 100 );
+// } );
+// down.mousedown( function () {
+//     downTimeout = setInterval( function () {
+//         if ( age > 16 ) $( '#age' ).html( age-- );
+//     }, 100 );
+// } );
 
-$( document ).mouseup( function () {
-    clearInterval( upTimeout );
-    clearInterval( downTimeout );
-} );
+// $( document ).mouseup( function () {
+//     clearInterval( upTimeout );
+//     clearInterval( downTimeout );
+// } );
 
 $( '#versCertif' ).click( function () {
     let input = [];
@@ -198,4 +198,17 @@ $( '#fermer' ).click( function () {
 
 $( '#deso' ).click( function () {
     window.location.href = `/`;
+} );
+
+$( '.keyboard' ).keypad( {
+    keypadOnly: false,
+    layout: $.keypad.qwertyLayout,
+    showAnim: ''
+} );
+
+$( '.keypad' ).keypad( {
+    showAnim: '',
+    onClose: function ( value ) {
+        if ( value < 16 ) $( '#age' ).val( '' );
+    }
 } );
