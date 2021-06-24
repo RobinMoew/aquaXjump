@@ -7,9 +7,9 @@
 			{# <button id="keyboard">afficher clavier</button> #}
 			<p id="error" class='rouge'>{{ 'error'|trans }}</p>
 			<p>{{ 'nom'|trans|upper }}</p>
-			<input type="text" class="keyboard">
+			<input type="text" class="keyboard nom">
 			<p>{{ 'prenom'|trans|upper }}</p>
-			<input type="text" class="keyboard">
+			<input type="text" class="keyboard nom">
 		</section>
 		<section id="sexeAge">
 			<div>
@@ -34,9 +34,9 @@
 							<span>{{ 'age'|trans|upper }}</span>
 						</span>
 						{# <span id="upDowmArrows">
-													<img id="up" src="{{ asset('/images/UpBlu.png') }}" alt="">
-													<img id="down" src="{{ asset('/images/DownBlu.png') }}" alt="">
-												</span> #}
+							<img id="up" src="{{ asset('/images/UpBlu.png') }}" alt="">
+							<img id="down" src="{{ asset('/images/DownBlu.png') }}" alt="">
+						</span> #}
 					</div>
 					<p class="ageMini">{{ 'miniAge'|trans|upper }}</p>
 				</div>

@@ -98,7 +98,7 @@ var age = $( '#age' ).html();
 
 $( '#versCertif' ).click( function () {
     let input = [];
-    $( 'input' ).each( function () {
+    $( '.nom' ).each( function () {
         if ( $( this ).val() != "" ) input.push( $( this ).val() );
         else {
             $( this ).css( {
@@ -108,12 +108,11 @@ $( '#versCertif' ).click( function () {
 
     } )
     let sexe = $( '.active' ).not( '.undisplayed' );
-    if ( sexe.length == 3 )
+    if ( sexe.length == 1 )
         input.push( sexe.attr( 'id' ).split( '_' )[ 0 ] );
-    let age = $( '#age' ).text();
+    let age = $( '#age' ).val();
     input.push( age );
     if ( input.length == 4 ) {
-        // localStorage.setItem( 'personne', input );
         $.ajax( {
             url: '/getDonneesUtilisateur',
             method: 'POST',
@@ -155,7 +154,7 @@ $( '.unChecked' ).click( function () {
 } )
 
 $( '#versDeclare' ).click( function () {
-    if ( $( '.active' ).not( '.undisplayed' ).length == 10 ) {
+    if ( $( '.active' ).not( '.undisplayed' ).length == 8 ) {
         $.ajax( {
             url: `/${ locale }/declaration`,
             success: () => {
@@ -173,7 +172,7 @@ $( '.declarationCheck' ).click( function () {
 } )
 
 $( '#versOk' ).click( function () {
-    if ( $( '.active' ).not( '.undisplayed' ).length == 3 ) {
+    if ( $( '.active' ).not( '.undisplayed' ).length ==1 ) {
         window.location.href = `/${ locale }/ok`;
     } else {
         window.location.href = `/${ locale }/nOk`;
