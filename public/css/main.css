@@ -30,11 +30,15 @@ header img {
     height: auto;
 }
 
+.aquaXjump {
+    width: 50%;
+}
+
 main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 80vh;
+    height: 65vh;
     position: relative;
 }
 
@@ -308,6 +312,11 @@ main>#sexeAge {
 #pOk>span,
 #pOk2>span {
     margin: 5px 0;
+}
+
+#pOk2>img {
+    width: 50%;
+    height: auto;
 }
 
 #fleche {

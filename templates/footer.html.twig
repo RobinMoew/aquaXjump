@@ -14,7 +14,10 @@
 	<script type="text/javascript" src="/js/jquery.plugin.js"></script>
 	<script type="text/javascript" src="/js/jquery.keypad.js"></script>
 	<script src="/js/main.js"></script>
-	{% if app.request.pathInfo == '/' ~ app.request.locale ~ '/nOk' %}
+	{% if 
+		app.request.pathInfo == '/' ~ app.request.locale ~ '/nOk' or
+		app.request.pathInfo == '/' ~ app.request.locale ~ '/bravo' 
+	%}
 		<script src="/js/timeoutNok.js"></script>
 	{% endif %}
 	{% if app.request.pathInfo == '/' ~ app.request.locale ~ '/ok' %}
