@@ -9,7 +9,7 @@ img.keypad-trigger {
 }
 .keypad-popup, .keypad-inline, .keypad-key, .keypad-special {
 	font-family: Arial,Helvetica,sans-serif;
-	font-size: 14px;
+	font-size: 1em;
 }
 .keypad-popup {
 	display: none;

@@ -138,7 +138,7 @@ main>#sexeAge {
 }
 
 .ageMini {
-    font-size: 0.7em;
+    font-size: 1em;
     color: red;
 }
 
@@ -373,7 +373,7 @@ footer.container {
     position: absolute;
     margin: 0 auto;
     display: none;
-    top: 0;
+    top: -30px;
     left: 0;
     right: 0;
     margin-bottom: 1em;

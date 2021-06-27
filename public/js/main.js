@@ -172,7 +172,7 @@ $( '.declarationCheck' ).click( function () {
 } )
 
 $( '#versOk' ).click( function () {
-    if ( $( '.active' ).not( '.undisplayed' ).length ==1 ) {
+    if ( $( '.active' ).not( '.undisplayed' ).length == 1 ) {
         window.location.href = `/${ locale }/ok`;
     } else {
         window.location.href = `/${ locale }/nOk`;
@@ -199,15 +199,62 @@ $( '#deso' ).click( function () {
     window.location.href = `/`;
 } );
 
-$( '.keyboard' ).keypad( {
-    keypadOnly: false,
-    layout: $.keypad.qwertyLayout,
-    showAnim: ''
+// $( '.keyboard' ).keypad( {
+//     keypadOnly: false,
+//     layout: $.keypad.qwertyLayout,
+//     showAnim: ''
+// } );
+
+// $( '.keypad' ).keypad( {
+//     showAnim: '',
+//     onClose: function ( value ) {
+//         if ( value < 16 ) $( '#age' ).val( '' );
+//     }
+// } );
+
+$( '.keyboard' ).keyboard( {
+    layout: 'qwerty',
+    position: {
+        // null = attach to input/textarea;
+        // use $(sel) to attach elsewhere
+        of: null,
+        my: 'center top',
+        at: 'center top',
+        // used when "usePreview" is false
+        at2: 'center bottom'
+    },
+    reposition: true,
+    usePreview: false,
+    autoAccept: true,
+    keyBinding: 'mousedown touchstart',
 } );
 
-$( '.keypad' ).keypad( {
-    showAnim: '',
-    onClose: function ( value ) {
-        if ( value < 16 ) $( '#age' ).val( '' );
-    }
+$( '.keypad' ).keyboard( {
+    layout: 'custom',
+    position: {
+        // null = attach to input/textarea;
+        // use $(sel) to attach elsewhere
+        of: null,
+        my: 'center top',
+        at: 'center top',
+        // used when "usePreview" is false
+        at2: 'center bottom'
+    },
+    reposition: true,
+    usePreview: false,
+    autoAccept: true,
+    keyBinding: 'mousedown touchstart',
+    maxLength: 2,
+    customLayout: {
+        'default': [
+            '7 8 9',
+            '4 5 6',
+            '1 2 3',
+            '0 bksp:Backspace'
+        ]
+    },
 } );
+
+$( 'button' ).click( function () {
+    keyboard.getKeySet()
+} )
