@@ -3,7 +3,7 @@
 	<main>
 		<button id='fermer'>{{ 'fermer'|trans }}</button>
 		<embed id="securitePDF" class='undisplayed' src="/rules1.pdf" type="application/pdf"/>
-		<embed id="donneePDF" class='undisplayed' src="/rules2.pdf" type="application/pdf"/>
+		{# <embed id="donneePDF" class='undisplayed' src="/rules2.pdf" type="application/pdf"/> #}
 		<h3>{{ 'moi'|trans|capitalize }}
 			{{ prenom|capitalize }}
 			{{ nom|capitalize }},
@@ -17,20 +17,20 @@
 		</section>
 
 		<section id="phrase">
-			<span class="spanhrase">{{ 'p1'|trans }}</span>
-			<span class="spanhrase">{{ 'p2'|trans }}</span>
-			<span class="spanhrase">{{ 'p3'|trans }}</span>
+			<span class="spanphrase">{{ 'p1'|trans }}</span>
+			<span class="spanphrase">{{ 'p2'|trans }}</span>
+			<span class="spanphrase">{{ 'p3'|trans }}</span>
 		</section>
-
-		<div id="accepte">
-			<p>{{ 'accepte'|trans }}</p>
-			<img src="{{ asset('/images/GreenUnchecked.png') }}" class="declarationCheck" alt="">
-			<img src="{{ asset('/images/GreenChecked.png') }}" class='active declarationCheck undisplayed' alt="">
-		</div>
 
 		<div id="condition">
 			<button id="securite">{{ 'securite'|trans }}</button>
-			<button id="donnee">{{ 'donnee'|trans }}</button>
+			{# <button id="donnee">{{ 'donnee'|trans }}</button> #}
+		</div>
+
+		<div id="accepte">
+			<p>{{ 'accepte'|trans }}</p>
+			<img src="{{ asset('/images/GreenUnchecked.png') }}" class="unactive" alt="">
+			<img src="{{ asset('/images/GreenChecked.png') }}" class='active declarationCheck undisplayed' alt="">
 		</div>
 
 		<section id="fleche">

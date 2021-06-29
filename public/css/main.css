@@ -263,6 +263,11 @@ main>#sexeAge {
     margin-left: 5px;
 }
 
+#accepte>.unactive {
+    filter: grayscale(100%);
+    cursor: not-allowed;
+}
+
 #condition {
     display: flex;
     justify-content: center;
@@ -367,6 +372,7 @@ footer.container {
     margin: auto;
     width: 1265px;
     height: 700px;
+    z-index: 1;
 }
 
 #fermer {

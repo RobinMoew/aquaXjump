@@ -6,16 +6,6 @@ $( function () {
     startTime();
 } );
 
-// $( '.ak-input' ).accentKeyboard( {
-//     // 'en_US', 'ru_RU', 'es_ES'
-//     // 'pt_PT', 'it_IT', 'fr_FR'
-//     layout: 'accent',
-//     active_shift: true,
-//     is_hidden: true,
-//     show_on_focus: true,
-//     hide_on_blur: true,
-// } );
-
 function startTime() {
     var today = new Date();
     var d = today.getDate();
@@ -166,11 +156,6 @@ $( '#versDeclare' ).click( function () {
     };
 } );
 
-$( '.declarationCheck' ).click( function () {
-    $( this ).addClass( 'undisplayed' );
-    $( this ).siblings().removeClass( 'undisplayed' );
-} )
-
 $( '#versOk' ).click( function () {
     if ( $( '.active' ).not( '.undisplayed' ).length == 1 ) {
         window.location.href = `/${ locale }/ok`;
@@ -182,11 +167,11 @@ $( '#versOk' ).click( function () {
 $( '#securite' ).click( function () {
     $( '#securitePDF' ).removeClass( 'undisplayed' );
     $( '#fermer' ).css( 'display', 'block' );
-} );
-
-$( '#donnee' ).click( function () {
-    $( '#donneePDF' ).removeClass( 'undisplayed' );
-    $( '#fermer' ).css( 'display', 'block' );
+    $( '#accepte>.unactive' ).addClass( 'declarationCheck' ).removeClass( 'unactive' );
+    $( '#accepte>.declarationCheck' ).bind( "click", function () {
+        $( this ).addClass( 'undisplayed' );
+        $( this ).siblings().removeClass( 'undisplayed' );
+    } );
 } );
 
 $( '#fermer' ).click( function () {
@@ -198,19 +183,6 @@ $( '#fermer' ).click( function () {
 $( '#deso' ).click( function () {
     window.location.href = `/`;
 } );
-
-// $( '.keyboard' ).keypad( {
-//     keypadOnly: false,
-//     layout: $.keypad.qwertyLayout,
-//     showAnim: ''
-// } );
-
-// $( '.keypad' ).keypad( {
-//     showAnim: '',
-//     onClose: function ( value ) {
-//         if ( value < 16 ) $( '#age' ).val( '' );
-//     }
-// } );
 
 $( '.keyboard' ).keyboard( {
     layout: 'qwerty',
@@ -254,7 +226,3 @@ $( '.keypad' ).keyboard( {
         ]
     },
 } );
-
-$( 'button' ).click( function () {
-    keyboard.getKeySet()
-} )
