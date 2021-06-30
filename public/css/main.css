@@ -371,7 +371,7 @@ footer.container {
     position: absolute;
     margin: auto;
     width: 1265px;
-    height: 700px;
+    height: 650px;
     z-index: 1;
 }
 
@@ -383,6 +383,9 @@ footer.container {
     left: 0;
     right: 0;
     margin-bottom: 1em;
+    padding: 0.5em;
+    font-size: 1.1em;
+    cursor: pointer;
 }
 
 #photo {
