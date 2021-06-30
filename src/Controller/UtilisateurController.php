@@ -118,6 +118,7 @@ class UtilisateurController extends AbstractController
         $project = $this->getParameter('kernel.project_dir');
         $command = 'python ' . $project . '\public\uploads\train_model.py ' . $id;
 
+        sleep(5);
         exec($command, $output, $code);
 
         return new Response(0);
