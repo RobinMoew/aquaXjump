@@ -1,9 +1,10 @@
 {% include "header.html.twig" %}
 {% block body %}
-{% set pdf = "/rules1_" ~ app.request.locale ~ ".pdf" %}
+	{% set pdf = "/rules_" ~ app.request.locale ~ ".pdf" %}
 	<main>
 		<button id='fermer'>{{ 'fermer'|trans }}</button>
-		<embed id="securitePDF" class='undisplayed' src="{{ pdf }}" type="application/pdf"/>
+		<embed
+		id="securitePDF" class='undisplayed' src="{{ pdf }}" type="application/pdf"/>
 		{# <embed id="donneePDF" class='undisplayed' src="/rules2.pdf" type="application/pdf"/> #}
 		<h3>{{ 'moi'|trans|capitalize }}
 			{{ prenom|capitalize }}
