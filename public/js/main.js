@@ -101,7 +101,9 @@ $( '#versCertif' ).click( function () {
     if ( sexe.length == 1 )
         input.push( sexe.attr( 'id' ).split( '_' )[ 0 ] );
     let age = $( '#age' ).val();
-    input.push( age );
+    if ( age < 16 ) {
+        $( '#age' ).val( '' );
+    } else input.push( age );
     if ( input.length == 4 ) {
         $.ajax( {
             url: '/getDonneesUtilisateur',
@@ -200,8 +202,8 @@ $( '.keyboard' ).keyboard( {
     autoAccept: true,
     keyBinding: 'mousedown touchstart',
     customLayout: {
-        'normal': [ 'q w e r t y u i o p', 'a s d f g h j k l', 'z x c v b n m', '{shift} {a} {c}' ],
-        'shift': [ 'Q W E R T Y U I O P', 'A S D F G H J K L', 'Z X C V B N M', '{shift} {a} {c}' ],
+        'normal': [ 'q w e r t y u i o p', 'a s d f g h j k l', 'z x c v b n m', '{shift} {c} {a}' ],
+        'shift': [ 'Q W E R T Y U I O P', 'A S D F G H J K L', 'Z X C V B N M', '{shift} {c} {a}' ],
     }
 } );
 
@@ -227,7 +229,7 @@ $( '.keypad' ).keyboard( {
             '4 5 6',
             '1 2 3',
             '0',
-            '{b} {a}'
+            '{c} {a}'
         ]
     },
 } );

@@ -116,9 +116,10 @@ class UtilisateurController extends AbstractController
             fclose($ifp);
         }
         $project = $this->getParameter('kernel.project_dir');
+        //$command = 'C:\Users\Borne\AppData\Local\Programs\Python\Python39\python.exe C:\wamp64\www\public\uploads\train_model.py' . $id;
         $command = 'python ' . $project . '\public\uploads\train_model.py ' . $id;
 
-        sleep(5);
+        //sleep(5);
         exec($command, $output, $code);
 
         return new Response(0);

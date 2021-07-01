@@ -189,14 +189,12 @@ main>#sexeAge {
     margin-bottom: 10px;
 }
 
-#upDowmArrows {
-    display: flex;
-    flex-direction: column;
+button.ui-keyboard-button[data-name='accept']>span {
+    color: #37c724;
 }
 
-#upDowmArrows>img {
-    margin: 10px;
-    cursor: pointer;
+button.ui-keyboard-button[data-name='cancel']>span {
+    color: red;
 }
 
 #souffre,
@@ -223,11 +221,11 @@ main>#sexeAge {
     justify-content: space-between;
     align-items: center;
     color: blue;
-    margin: 0 10em;
+    margin: 0 9em;
 }
 
 .cause img {
-    width: 50px;
+    width: 65px;
     height: auto;
     cursor: pointer;
 }
@@ -247,6 +245,7 @@ main>#sexeAge {
     color: #37c724;
     font-weight: 700;
     font-size: 1.2em;
+    margin: 5px 0;
 }
 
 #accepte {
@@ -275,13 +274,16 @@ main>#sexeAge {
 
 #condition>button {
     border: none;
-    width: 20%;
-    height: 40px;
     background-color: #f1f1f1;
     margin: 0 5px;
     text-align: center;
-    line-height: 2.5;
     cursor: pointer;
+    padding: 1em;
+    font-size: 1.1em;
+}
+
+#condition>#fleche {
+    rotate: 180deg;
 }
 
 #nOk,
