@@ -213,7 +213,7 @@ $( '#deso' ).click( function () {
 // } );
 
 $( '.keyboard' ).keyboard( {
-    layout: 'qwerty',
+    layout: 'custom',
     position: {
         // null = attach to input/textarea;
         // use $(sel) to attach elsewhere
@@ -227,6 +227,10 @@ $( '.keyboard' ).keyboard( {
     usePreview: false,
     autoAccept: true,
     keyBinding: 'mousedown touchstart',
+    customLayout: {
+        'normal': [ 'q w e r t y u i o p', 'a s d f g h j k l', 'z x c v b n m', '{s} {b} {a}' ],
+        'shift': [ 'Q W E R T Y U I O P', 'A S D F G H J K L', 'Z X C V B N M', '{s} {b} {a}' ],
+    }
 } );
 
 $( '.keypad' ).keyboard( {
@@ -250,7 +254,8 @@ $( '.keypad' ).keyboard( {
             '7 8 9',
             '4 5 6',
             '1 2 3',
-            '0 bksp:Backspace'
+            '0',
+            '{b} {a}'
         ]
     },
 } );

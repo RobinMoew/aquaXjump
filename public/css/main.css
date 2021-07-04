@@ -325,14 +325,15 @@ main>#sexeAge {
 }
 
 #fleche>a>img {
-    width: 100px;
+    cursor: pointer;
+    width: 140px;
     height: auto;
     margin: 0 200px;
 }
 
 #fleche>img {
     cursor: pointer;
-    width: 100px;
+    width: 140px;
     height: auto;
     margin: 0 200px;
 }
@@ -392,4 +393,26 @@ footer.container {
 
 #pPhoto {
     text-align: center;
+}
+
+.ui-keyboard-button {
+    min-width: 4em !important;
+    height: 4em !important;
+}
+
+.ui-keyboard-actionkey:not(.ui-keyboard-dec):not(.ui-keyboard-combo) {
+    min-width: 6em !important;
+}
+
+.ui-keyboard-actionkey:not(.ui-keyboard-dec):not(.ui-keyboard-combo) span {
+    top: 0 !important;
+    left: 0 !important;
+}
+
+.ui-keyboard-button span {
+    font-size: 1.8em !important;
+}
+
+button.ui-keyboard-button[data-name='accept']>span {
+    color: #37c724;
 }
