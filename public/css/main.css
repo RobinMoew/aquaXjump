@@ -406,6 +406,11 @@ footer.container {
     text-align: center;
 }
 
+.ui-keyboard {
+    bottom: 0 !important;
+    top: unset !important;
+}
+
 .ui-keyboard-button {
     min-width: 4em !important;
     height: 4em !important;
@@ -426,4 +431,9 @@ footer.container {
 
 button.ui-keyboard-button[data-name='accept']>span {
     color: #37c724;
+}
+
+#age_keyboard {
+    bottom: 0 !important;
+    top: unset !important;
 }
