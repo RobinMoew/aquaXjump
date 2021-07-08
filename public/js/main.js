@@ -161,15 +161,14 @@ $( '#versDeclare' ).click( function () {
 $( '#versOk' ).click( function () {
     if ( $( '.active' ).not( '.undisplayed' ).length == 1 ) {
         window.location.href = `/${ locale }/ok`;
-    } else {
-        window.location.href = `/${ locale }/nOk`;
-    };
+    }
 } );
 
 $( '#securite' ).click( function () {
     $( '#securitePDF' ).removeClass( 'undisplayed' );
     $( '#fermer' ).css( 'display', 'block' );
     $( '#accepte>.unactive' ).addClass( 'declarationCheck' ).removeClass( 'unactive' );
+    $( '.unactiveArrow' ).removeClass( 'unactiveArrow' );
     $( '#accepte>.declarationCheck' ).bind( "click", function () {
         $( this ).addClass( 'undisplayed' );
         $( this ).siblings().removeClass( 'undisplayed' );

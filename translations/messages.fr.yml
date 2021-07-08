@@ -39,6 +39,10 @@ pOk1: Afin d'être autorisé à accéder à l'attraction,
 pOk2: et être reconnu par le contrôle d'accès,
 pOk3: nous devons prendre 5 photos.
 pOk4: Ne bougez pas et fixez l'écran
+pOk5: Attention, pour une qualité de photo optimal, 
+pOk6: merci de bien enlever masque, lunette, casquette,
+pOk7: bob australien et de bien dégager votre visage de vos cheveux
+pOk8: Merci pour votre compréhension . ceci pour vous éviter de refaire un enregistrement
 pFelicitation: Vous êtes autorisé à accéder à l'attraction.
 pSecure1: "Pour votre sécurité, l'accès à cette attraction vous est interdit"
 pSecure2: >-

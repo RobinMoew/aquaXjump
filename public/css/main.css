@@ -267,6 +267,10 @@ button.ui-keyboard-button[data-name='cancel']>span {
     cursor: not-allowed;
 }
 
+.unactiveArrow {
+    filter: grayscale(100%);
+}
+
 #condition {
     display: flex;
     justify-content: center;
@@ -307,7 +311,8 @@ button.ui-keyboard-button[data-name='cancel']>span {
 
 #pNOk,
 #pOk,
-#pOk2 {
+#pOk2,
+#pOk3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -317,7 +322,8 @@ button.ui-keyboard-button[data-name='cancel']>span {
 
 #pNOk>span,
 #pOk>span,
-#pOk2>span {
+#pOk2>span,
+#pOk3>span {
     margin: 5px 0;
 }
 
