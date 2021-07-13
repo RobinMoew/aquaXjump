@@ -99,7 +99,10 @@ class UtilisateurController extends AbstractController
      */
     public function upload(Request $request): Response
     {
-        $id = $request->get('idP');
+        // $id = $request->get('idP');
+        $entityManager = $this->getDoctrine()->getManager();
+        $personne = $entityManager->getRepository(Personne::class)->findBy(array(), array('id' => 'DESC'), 1, 0);
+        $id = $personne[0]->getId();
         $dir = $this->getParameter('images_directory') . $id;
         if (!is_dir($dir)) mkdir($dir);
         foreach ($request->get('imgs') as $key => $b64img) {
@@ -121,8 +124,8 @@ class UtilisateurController extends AbstractController
             fclose($ifp);
         }
         $project = $this->getParameter('kernel.project_dir');
-        //$command = 'C:\Users\Borne\AppData\Local\Programs\Python\Python39\python.exe C:\wamp64\www\public\uploads\train_model.py' . $id;
         $command = 'python ' . $project . '\public\uploads\train_model.py ' . $id;
+        // $command = 'C:\Users\Borne\AppData\Local\Programs\Python\Python39\python.exe C:\wamp64\www\public\uploads\train_model.py' . $id;
 
         //sleep(5);
         exec($command, $output, $code);
