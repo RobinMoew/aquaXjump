@@ -21,18 +21,18 @@ $( function () {
     var count = 0;
     var shot = setInterval( function () {
       count++;
-      $( '#textePhoto' ).html( count + '/5' );
+      $( '#textePhoto' ).html( count + '/4' );
       takeSnapshot();
       saveSnap();
-      if ( count == 5 ) {
+      if ( count == 4 ) {
         upload();
         clearInterval( shot );
         setTimeout( function () {
           window.location.href = `/${ locale }/bravo`;
-        }, 5000 );
+        }, 7000 );
       }
     }, 1000 )
-  }, 5000 )
+  }, 7000 )
 } );
 
 function takeSnapshot() {
@@ -56,6 +56,6 @@ function upload() {
     data: {
       imgs: imgs,
       idP: idP
-    },
+    }
   } );
 }

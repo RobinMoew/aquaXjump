@@ -294,7 +294,7 @@ button.ui-keyboard-button[data-name='cancel']>span {
 }
 
 #condition>#fleche {
-    rotate: 180deg;
+    transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
 }
 
