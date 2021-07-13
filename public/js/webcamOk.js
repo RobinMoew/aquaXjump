@@ -49,11 +49,13 @@ function saveSnap() {
 }
 
 function upload() {
+  let idP = $( '#idP' ).text();
   $.ajax( {
     url: '/upload',
     method: 'POST',
     data: {
-      imgs: imgs
+      imgs: imgs,
+      idP: idP
     },
   } );
 }

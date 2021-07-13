@@ -9,7 +9,7 @@ $( function () {
 function startTime() {
     var today = new Date();
     var d = today.getDate();
-    var mo = today.getMonth();
+    var mo = today.getMonth() + 1;
     var y = today.getFullYear();
     var h = today.getHours();
     var m = today.getMinutes();

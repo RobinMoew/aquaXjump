@@ -3,6 +3,13 @@
     font-weight: bold;
 }
 
+#idP {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 6px;
+}
+
 .undisplayed {
     display: none;
 }
@@ -288,6 +295,7 @@ button.ui-keyboard-button[data-name='cancel']>span {
 
 #condition>#fleche {
     rotate: 180deg;
+    -webkit-transform: rotate(180deg);
 }
 
 #nOk,

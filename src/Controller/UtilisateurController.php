@@ -41,6 +41,7 @@ class UtilisateurController extends AbstractController
             $personne->setEnregistrement(new \DateTime('NOW'));
             $entityManager->persist($personne);
             $entityManager->flush();
+            $this->get('session')->set('id', $personne->getId());
         }
         return new Response(0);
     }
@@ -55,6 +56,7 @@ class UtilisateurController extends AbstractController
             'prenom' => $this->get('session')->get('prenom'),
             'sexe' => $this->get('session')->get('sexe'),
             'age' => $this->get('session')->get('age'),
+            'id' => $this->get('session')->get('id'),
         ]);
     }
 
@@ -68,6 +70,7 @@ class UtilisateurController extends AbstractController
             'prenom' => $this->get('session')->get('prenom'),
             'sexe' => $this->get('session')->get('sexe'),
             'age' => $this->get('session')->get('age'),
+            'id' => $this->get('session')->get('id'),
         ]);
     }
 
@@ -76,7 +79,9 @@ class UtilisateurController extends AbstractController
      */
     public function nOk(): Response
     {
-        return $this->render('utilisateur/nOk.html.twig', []);
+        return $this->render('utilisateur/nOk.html.twig', [
+            'id' => $this->get('session')->get('id'),
+        ]);
     }
 
     /**
@@ -84,7 +89,9 @@ class UtilisateurController extends AbstractController
      */
     public function ok(): Response
     {
-        return $this->render('utilisateur/ok.html.twig', []);
+        return $this->render('utilisateur/ok.html.twig', [
+            'id' => $this->get('session')->get('id'),
+        ]);
     }
 
     /**
@@ -92,9 +99,7 @@ class UtilisateurController extends AbstractController
      */
     public function upload(Request $request): Response
     {
-        $entityManager = $this->getDoctrine()->getManager();
-        $personne = $entityManager->getRepository(Personne::class)->findBy(array(), array('id' => 'DESC'), 1, 0);
-        $id = $personne[0]->getId();
+        $id = $request->get('idP');
         $dir = $this->getParameter('images_directory') . $id;
         if (!is_dir($dir)) mkdir($dir);
         foreach ($request->get('imgs') as $key => $b64img) {
