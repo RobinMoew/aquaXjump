@@ -319,8 +319,7 @@ button.ui-keyboard-button[data-name='cancel']>span {
 
 #pNOk,
 #pOk,
-#pOk2,
-#pOk3 {
+#pOk2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -330,14 +329,23 @@ button.ui-keyboard-button[data-name='cancel']>span {
 
 #pNOk>span,
 #pOk>span,
-#pOk2>span,
-#pOk3>span {
+#pOk2>span {
     margin: 5px 0;
 }
 
 #pOk2>img {
     width: 50%;
     height: auto;
+}
+
+#pOk3 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#pOk3>img {
+    width: 125px;
+    height: 125px;
 }
 
 #fleche {
