@@ -348,23 +348,34 @@ button.ui-keyboard-button[data-name='cancel']>span {
     height: 125px;
 }
 
-#fleche {
+#fleche,
+#flecheCertif {
     display: flex;
     justify-content: center;
 }
 
-#fleche>a>img {
+#fleche>a>img,
+#flecheCertif>a>img {
     cursor: pointer;
     width: 140px;
     height: auto;
     margin: 0 200px;
 }
 
-#fleche>img {
+#flecheCertif>a>img {
+    margin: 0;
+}
+
+#fleche>img,
+#flecheCertif>img {
     cursor: pointer;
     width: 140px;
     height: auto;
     margin: 0 200px;
+}
+
+#flecheCertif>img {
+    margin: 0;
 }
 
 footer {
