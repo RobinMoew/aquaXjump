@@ -5,8 +5,8 @@ $( function () {
     height: 240,
 
     // device capture size
-    dest_width: 320,
-    dest_height: 240,
+    dest_width: 640,
+    dest_height: 480,
 
     // final cropped size
     crop_width: 240,
@@ -21,10 +21,10 @@ $( function () {
     var count = 0;
     var shot = setInterval( function () {
       count++;
-      $( '#textePhoto' ).html( count + '/4' );
+      $( '#textePhoto' ).html( count + '/5' );
       takeSnapshot();
       saveSnap();
-      if ( count == 4 ) {
+      if ( count == 5 ) {
         upload();
         clearInterval( shot );
         setTimeout( function () {

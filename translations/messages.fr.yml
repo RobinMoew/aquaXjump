@@ -13,7 +13,7 @@ deso: Nous sommes désolés
 donnee: Lire la protection des données
 donneesUser: Données utilisateur
 equilibre: "de problèmes d'audition, d'équilibre, de pression sur les thympans..."
-espace: de désorientation dans l'espace
+espace: ne pas peser plus de 120kg
 felicitation: Toutes nos félicitations
 messageCa: >-
   abans d'accedir a les installacions, han d'omplir i acceptar el següent
@@ -37,13 +37,13 @@ p2: "déclare pouvoir utiliser l'attraction AQUA X JUMP,"
 p3: étant responsable de mes actions en cas d'accident.
 pOk1: Afin d'être autorisé à accéder à l'attraction,
 pOk2: et être reconnu par le contrôle d'accès,
-pOk3: nous devons prendre 4 photos.
+pOk3: nous devons prendre 5 photos.
 pOk4: Ne bougez pas et fixez l'écran
-pOk5: Attention, pour une qualité de photo optimal, 
+pOk5: Attention, pour une qualité de photo optimale, 
 pOk6: merci de bien enlever masque, lunette, casquette,
 pOk7: bob australien et de bien dégager votre visage de vos cheveux
-pOk8: Merci pour votre compréhension . ceci pour vous éviter de refaire un enregistrement
-pFelicitation: Vous êtes autorisé à accéder à l'attraction.
+pOk8: Merci pour votre compréhension . Ceci pour vous éviter de refaire un enregistrement
+pFelicitation: Vous êtes autorisé à accéder à l'attraction. Merci de patienter 4 à 5 minutes avant de vous présente à l'entrée
 pSecure1: "Pour votre sécurité, l'accès à cette attraction vous est interdit"
 pSecure2: >-
   Vous pouvez profiter de toutes les autres attractions que vous propose
@@ -61,7 +61,7 @@ regle4: Postures et positions appropriées de chaque attraction
 securite: Lire les normes de sécurité
 souffre: Je souffre
 souffrePas: Je ne souffre pas
-vu: de mauvaise vue
+vu: de mauvaise vue et de désorientation dans l'espace
 error: Champs manquants
 fermer: Cliquer pour fermer
 photo: "Photo: "

@@ -1,5 +1,5 @@
 var config = {
-    'backHomeTimer': 10000,
+    'backHomeTimer': 5000,
 }
 
 $( function () {
