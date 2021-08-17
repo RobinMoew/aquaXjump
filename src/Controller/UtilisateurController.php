@@ -99,10 +99,7 @@ class UtilisateurController extends AbstractController
      */
     public function upload(Request $request): Response
     {
-        // $id = $request->get('idP');
-        $entityManager = $this->getDoctrine()->getManager();
-        $personne = $entityManager->getRepository(Personne::class)->findBy(array(), array('id' => 'DESC'), 1, 0);
-        $id = $personne[0]->getId();
+        $id = $request->get('idP');
         $dir = $this->getParameter('images_directory') . $id;
         if (!is_dir($dir)) mkdir($dir);
         foreach ($request->get('imgs') as $key => $b64img) {
