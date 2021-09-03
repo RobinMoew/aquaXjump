@@ -470,3 +470,7 @@ button.ui-keyboard-button[data-name='accept']>span {
     bottom: 0 !important;
     top: unset !important;
 }
+
+#countImg {
+    font-size: 4em;
+}

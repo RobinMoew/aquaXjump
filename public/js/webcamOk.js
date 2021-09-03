@@ -1,3 +1,4 @@
+var count = 0;
 $( function () {
   Webcam.set( {
     // live preview size
@@ -18,10 +19,9 @@ $( function () {
   } );
   Webcam.attach( '#cam' );
   setTimeout( function () {
-    var count = 0;
     var shot = setInterval( function () {
       count++;
-      $( '#textePhoto' ).html( count + '/5' );
+      // $( '#textePhoto' ).html( count + '/5' );
       takeSnapshot();
       saveSnap();
       if ( count == 5 ) {
@@ -36,9 +36,10 @@ $( function () {
 } );
 
 function takeSnapshot() {
-  Webcam.snap( function ( data_uri ) {
-    $( '#result' ).html( '<img id="imageprev" src="' + data_uri + '"/>' );
-  } );
+  $( '#result' ).html( `<span id="countImg">${count}</span>` );
+  // Webcam.snap( function ( data_uri ) {
+  //   $( '#result' ).html( '<img id="imageprev" src="' + data_uri + '"/>' );
+  // } );
 }
 
 var imgs = [];
