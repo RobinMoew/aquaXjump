@@ -292,7 +292,7 @@ button.ui-keyboard-button[data-name='cancel']>span {
     font-size: 1.1em;
 }
 
-#condition>#fleche {
+#condition>.flecheNormeSecu {
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
 }
