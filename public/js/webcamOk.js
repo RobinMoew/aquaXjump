@@ -1,4 +1,5 @@
 var count = 0;
+var count2 = 6;
 $( function () {
   Webcam.set( {
     // live preview size
@@ -36,7 +37,8 @@ $( function () {
 } );
 
 function takeSnapshot() {
-  $( '#result' ).html( `<span id="countImg">${count}</span>` );
+  count2--;
+  $( '#result' ).html( `<span id="countImg">${count2}</span>` );
   // Webcam.snap( function ( data_uri ) {
   //   $( '#result' ).html( '<img id="imageprev" src="' + data_uri + '"/>' );
   // } );
