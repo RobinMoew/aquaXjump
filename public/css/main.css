@@ -22,10 +22,6 @@
     color: red;
 }
 
-header {
-    padding: 1em;
-}
-
 header h1 {
     text-align: center;
     font-size: 4vw;
@@ -38,7 +34,10 @@ header img {
 }
 
 .aquaXjump {
-    width: 50%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
 }
 
 main {
@@ -232,13 +231,13 @@ button.ui-keyboard-button[data-name='cancel']>span {
 }
 
 .cause img {
-    width: 65px;
+    width: 60px;
     height: auto;
     cursor: pointer;
 }
 
 .cause span {
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 #regle,
@@ -352,6 +351,7 @@ button.ui-keyboard-button[data-name='cancel']>span {
 #flecheCertif {
     display: flex;
     justify-content: center;
+    margin-bottom: 3em;
 }
 
 #fleche>a>img,
